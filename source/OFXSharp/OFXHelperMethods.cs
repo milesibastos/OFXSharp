@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace OFXSharp
@@ -23,24 +24,44 @@ namespace OFXSharp
         /// <returns>Date in format DDMMYYYY</returns>
         public static DateTime ToDate(this string date)
         {
-            try
-            {
-                if (date.Length < 8)
-                {
-                    return new DateTime();
-                }
+			try
+			{
+				string resultDate = null;
 
-                var dd = Int32.Parse(date.Substring(6, 2));
-                var mm = Int32.Parse(date.Substring(4, 2));
-                var yyyy = Int32.Parse(date.Substring(0, 4));
+				if (IsDateInOFXDefaultEspecification(date, out resultDate))
+				{
+					var dd = Int32.Parse(resultDate.Substring(6, 2));
+					var mm = Int32.Parse(resultDate.Substring(4, 2));
+					var yyyy = Int32.Parse(resultDate.Substring(0, 4));
 
-                return new DateTime(yyyy, mm, dd);
-            }
-            catch
-            {
-                throw new OFXParseException("Unable to parse date");
-            }
+					return new DateTime(yyyy, mm, dd);
+				}
+
+				return new DateTime();
+			}
+			catch
+			{
+				throw new OFXParseException("Unable to parse date");
+			}
         }
+
+		/// <summary>
+		/// Check if date this in YYYYMMDD format.
+		/// </summary>
+		/// <param name="date">String containing date.</param>
+		/// <returns>Returns true if format is valid.</returns>
+		public static bool IsDateInOFXDefaultEspecification(string date, out string result)
+		{
+			Regex regex = new Regex(@"^\d{4}((0\d)|(1[012]))(([012]\d)|3[01])");
+			bool isDateInOFXFormat = regex.IsMatch(date);
+
+			if (isDateInOFXFormat)
+				result = regex.Match(date).Value;
+			else
+				result = null;
+
+			return isDateInOFXFormat;
+		}
 
         /// <summary>
         /// Returns value of specified node
