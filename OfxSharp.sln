@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfxSharp", "Lib\OfxSharp.csproj", "{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfxSharp.Tests", "Tests\OfxSharp.Tests.csproj", "{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{DDD851F6-8CDE-4777-9B44-AADD0CC678F3}.Test|Any CPU.Build.0 = Test|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{9E62687C-D10B-4410-B6F8-F5C3A3C2820F}.Test|Any CPU.Build.0 = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03E3F486-B356-45CE-A484-0637FBD48219}
+	EndGlobalSection
+EndGlobal
